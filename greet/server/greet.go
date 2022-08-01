@@ -8,8 +8,8 @@ import (
 )
 
 func (s *Server) Greet(ctx context.Context, in *pb.GreetRequest) (*pb.GreetResponse, error) {
-	log.Println("Greent Server function was invoked with &v", in)
+	log.Printf("Greent Server function was invoked with %v", in)
 	return &pb.GreetResponse{
-		Result: "Hello" + in.FirstName,
+		Result: "Hello " + in.FirstName,
 	}, nil
 }
