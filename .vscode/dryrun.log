@@ -1,3 +1,4 @@
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/nikhar/workspace/go-grpc-course'
 grep -E '^[a-zA-Z_-]+:.*?## .*$'  Makefile | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $1, $2}'
 make: Leaving directory `/Users/nikhar/workspace/go-grpc-course'

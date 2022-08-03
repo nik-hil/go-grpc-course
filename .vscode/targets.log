@@ -8,7 +8,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Mon Aug  1 14:11:45 2022
+# Make data base, printed on Wed Aug  3 09:31:32 2022
+ 
 
 # Variables
 
@@ -79,7 +80,6 @@ ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
 GOMODCACHE = /Users/nikhar/go/pkg/mod
 # environment
- 
 HOME = /Users/nikhar
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
@@ -188,9 +188,9 @@ VSCODE_PID = 472
 
 # Directories
 
-# . (device 16777225, inode 22309043): 6 files, no impossibilities.
+# . (device 16777225, inode 22349615): 9 files, no impossibilities.
 
-# 6 files, no impossibilities in 1 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -229,7 +229,7 @@ clean_greet:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-01 14:11:45
+#  Last modified 2022-08-01 16:56:36
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -305,6 +305,7 @@ about:
 	@echo "Protoc version: $(shell protoc --version)"
 	@echo "Go version: $(shell go version)"
 	@echo "Go package: ${PACKAGE}"
+ 
 	@echo "Openssl version: $(shell openssl version)"
 	
 
@@ -353,7 +354,6 @@ blog:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
- 
 #  commands to execute (from `Makefile', line 50):
 	@${CHECK_DIR_CMD}
 	protoc -I$@/${PROTO_DIR} --go_opt=module=${PACKAGE} --go_out=. --go-grpc_opt=module=${PACKAGE} --go-grpc_out=. $@/${PROTO_DIR}/*.proto
@@ -374,6 +374,6 @@ blog:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Aug  1 14:11:45 2022
+# Finished Make data base on Wed Aug  3 09:31:32 2022
 
  
