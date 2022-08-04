@@ -9,3 +9,4 @@ Tutorial about using gRPC with Go.
 1. Implemented doGreet & Greet fun. [See link for more details.](https://github.com/nik-hil/go-grpc-course/tree/eb04df75c5b3112ab8888b0576df2687450a379d)
 1. Implemented Sever Streaming. [See link for more details.](https://github.com/nik-hil/go-grpc-course/tree/578ac699913e08946be36c0f8f9c6662443c7c65)
 1. Implemented Client Streaming. [See link for more details.](https://github.com/nik-hil/go-grpc-course/tree/a9a650f11861bf463a57f3fa2dcd7cb208ffba71)
+1. Implemented Bidirectional Streaming. [See link for more details.](https://github.com/nik-hil/go-grpc-course/tree/83df0638bd70b15fd52491681b8bc402e1aa5bfc)
