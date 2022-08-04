@@ -67,7 +67,49 @@ func doLongGreet(c pb.GreetServiceClient) {
 
 	res, err := stream.CloseAndRecv()
 	if err != nil {
-		log.Fatal("Error in closing LongGreet: %v\n", err)
+		log.Fatalf("Error in closing LongGreet: %v\n", err)
 	}
 	log.Printf("LongGreet: %s\n", res.Result)
+}
+
+func doGreetEveryone(c pb.GreetServiceClient) {
+	log.Printf("doGreetEveryone was invoked")
+
+	stream, err := c.GreetEveryone(context.Background())
+	if err != nil {
+		log.Fatalf("Error while calling doGreetManyTimes")
+	}
+	reqs := []*pb.GreetRequest{
+		{FirstName: "Nikhil"},
+		{FirstName: "Test1"},
+		{FirstName: "Test2"},
+	}
+
+	waitc := make(chan struct{})
+
+	go func() {
+		for _, req := range reqs {
+			log.Printf("Sending req: %v\n", req)
+			stream.Send(req)
+			time.Sleep(1 * time.Second)
+		}
+		stream.CloseSend()
+	}()
+	go func() {
+		for {
+			msg, err := stream.Recv()
+			if err == io.EOF {
+				break
+			}
+			if err != nil {
+				log.Fatalf("Error while reading the stream: %v\n", err)
+				break
+			}
+			log.Printf("doGreetEveryone %s\n", msg.Result)
+		}
+		close(waitc)
+	}()
+
+	<-waitc
+
 }

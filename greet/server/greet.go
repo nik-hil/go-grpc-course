@@ -47,3 +47,27 @@ func (s *Server) LongGreet(stream pb.GreetService_LongGreetServer) error {
 		res += fmt.Sprintf("Hello %s! \t", req.FirstName)
 	}
 }
+
+func (s *Server) GreetEveryone(stream pb.GreetService_GreetEveryoneServer) error {
+	log.Printf("GreetEveryone function was invoked")
+	i := 0
+	for {
+		req, err := stream.Recv()
+		if err == io.EOF {
+			return nil
+		}
+		if err != nil {
+			log.Fatalf("Error while reading the stream: %v\n", err)
+		}
+		log.Printf("LongGreet %s count %d\n", req.FirstName, i)
+		i = i + 1
+		res := fmt.Sprintf("Hello %s! \n", req.FirstName)
+		err = stream.Send(&pb.GreetResponse{
+			Result: res,
+		})
+		if err != nil {
+			log.Fatalf("Error while sending the stream: %v\n", err)
+		}
+
+	}
+}

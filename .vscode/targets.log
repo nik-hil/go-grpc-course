@@ -8,11 +8,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Wed Aug  3 09:31:32 2022
- 
+# Make data base, printed on Thu Aug  4 20:53:46 2022
 
 # Variables
 
+ 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
@@ -36,8 +36,6 @@ SHELL_VERSION = $(shell echo $$BASH_VERSION)
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
-VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
-# environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # makefile (from `Makefile', line 41)
 project := greet calculator blog
@@ -46,11 +44,7 @@ PACKAGE = $(shell head -1 go.mod | awk '{print $$2}')
 # environment
 VSCODE_CWD = /
 # environment
-GOPROXY = https://proxy.golang.org,direct
-# environment
 PATH = /Users/nikhar/.krew/bin:/usr/local/opt/mysql-client/bin:/Users/nikhar/Library/Python/3.8/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Users/nikhar/.krew/bin:/usr/local/opt/mysql-client/bin:/Users/nikhar/Library/Python/3.8/bin
-# environment
-GOPATH = /Users/nikhar/go
 # makefile (from `Makefile', line 31)
 CHECK_DIR_CMD = test -d $@ || (echo "\033[31mDirectory $@ doesn't exist\033[0m" && false)
 # environment
@@ -78,7 +72,7 @@ PWD = /Users/nikhar/workspace/go-grpc-course
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
-GOMODCACHE = /Users/nikhar/go/pkg/mod
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /Users/nikhar
 # default
@@ -180,7 +174,7 @@ LANG = C
 # environment
 VSCODE_PID = 472
 # variable set hash-table stats:
-# Load=83/1024=8%, Rehash=0, Collisions=2/136=1%
+# Load=80/1024=8%, Rehash=0, Collisions=1/133=1%
 
 # Pattern-specific Variable Values
 
@@ -188,9 +182,9 @@ VSCODE_PID = 472
 
 # Directories
 
-# . (device 16777225, inode 22349615): 9 files, no impossibilities.
+# . (device 16777225, inode 22349615): 10 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 10 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -212,6 +206,7 @@ all: greet calculator blog
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 clean_greet:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -305,7 +300,6 @@ about:
 	@echo "Protoc version: $(shell protoc --version)"
 	@echo "Go version: $(shell go version)"
 	@echo "Go package: ${PACKAGE}"
- 
 	@echo "Openssl version: $(shell openssl version)"
 	
 
@@ -374,6 +368,6 @@ blog:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Aug  3 09:31:32 2022
+# Finished Make data base on Thu Aug  4 20:53:46 2022
 
  
